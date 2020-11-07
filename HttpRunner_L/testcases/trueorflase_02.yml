@@ -1,0 +1,15 @@
+#断言
+- config:
+    name: 断言
+    base_url: http://www.hnxmxit.com
+
+- test:
+    name: 湖南新梦想
+    request:
+      url: /
+      method: GET
+    extract:
+      reason: "reason"
+    validate:
+      - {'check':'$reason','comparator':'eq','expect':'OK'}
+

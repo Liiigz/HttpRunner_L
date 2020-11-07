@@ -1,0 +1,10 @@
+name: 创建标签
+base_url: {$ENV(BASE_URL)}
+request:
+  method: POST
+  url: /cgi-bin/tags/create
+  params:
+    access_token: 39_WI1cGSe2MFjizcILVJbHn87U-p5HWi3cVnSyF7ey6gjse7fIMKm4M3kM6Fd6COSGYyyzsWe9ueT5wN8vcPWUl6YQkCMDxNHN9NOT-x1VAI6SKYuun_55HZJZcQBDgqs_MXg70lWjvi4qvnpVVOLjAJACVS
+  json: {   "tag" : {     "name" : "hr02"   } }
+validate:
+  

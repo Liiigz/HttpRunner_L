@@ -1,0 +1,16 @@
+#获取响应数据(响应行、响应头、响应正文(html、json))
+#解析响应正文
+- config:
+    name: 验证能否打开百度主页
+    base_url: http://www.baidu.com
+
+- test:
+    name: 接口名称 百度主页接口
+    request:
+      url: /
+      method: GET
+    extract:
+      v: '<a href=http://news.baidu.com name=(.+?) class=mnav>'
+    validate:
+      - eq: [$v,'tj_trnews']
+

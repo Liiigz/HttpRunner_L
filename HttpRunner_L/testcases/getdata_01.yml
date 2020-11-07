@@ -1,0 +1,20 @@
+#获取响应数据(响应行、响应头、响应正文(html、json))
+- config:
+    name: 验证能否打开湖南新梦想主页
+    base_url: http://www.hnxmxit.com
+
+- test:
+    name: 接口名称 湖南新梦想主页接口
+    request:
+      url: /
+      method: GET
+    extract:
+      - code: status_code
+      - info: reason
+      - time: elapsed.microseconds   #
+      - header_con: headers.Content-Type
+    validate:
+      - eq: [$code,200] #code表示取code变量内的值
+      - eq: [$info,'OK']
+      - eq: [$header_con,'text/html']
+
